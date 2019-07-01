@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="history-container">
+    <div class="history-table-header">
+      <div class="cell-number">№</div>
+      <div class="cell-card">Карта плательщика</div>
+      <div class="cell-card">Карта получателя</div>
+      <div class="cell-quantaty cell-quantaty-header">Сумма</div>
+      <div class="cell-date">Дата выполнения</div>
+      <div class="cell-action">Действие</div>
+    </div>
+    <div class="history-table-line" *ngFor="let datacard of transactions; let i = index">
+      <div class="cell-number">{{i}}</div>
+      <div class="cell-card">{{datacard.payerCard}}</div>
+      <div class="cell-card">{{datacard.beneficiaryCard}}</div>
+      <div class="cell-quantaty">{{datacard.quantaty}}</div>
+      <div class="cell-date cell-date--value">{{datacard.date | date : 'shortDate'}}</div>
+      <div class="cell-action">
+        <button class="action-button" (click)="repeatTransaction(i)">Повторить</button>
+        <button class="action-button" (click)="deleteTransactions(i)">Удалить</button>
+      </div>
+    </div>
+</div>
+</div>

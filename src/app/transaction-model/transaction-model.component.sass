@@ -1,0 +1,131 @@
+.transaction-model
+  display: flex
+  flex-direction: column
+  margin: 3em
+  padding-left: 13em
+  padding-right: 13em
+  .transaction-errors
+    z-index: 10
+    width: 280px
+    font-size: 0.8em
+    margin-left: 42em
+    margin-top: 3em
+    height: 65px
+    border-radius: 9px
+    border: 2px solid #ce5454
+    text-align: center
+    padding-top: 1em
+    position: absolute
+.cards
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  .input-error
+    border: 2px solid red !important
+  input
+    padding-left: 1em
+  .beneficiary-card
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+    background-color: #EEF2F7
+    max-width: 33%
+    width: 33%
+    display: flex
+    flex-direction: column
+    border-radius: 12px
+    padding: 1em
+    .title
+      margin-left: 7em
+      margin-bottom: 1em
+      margin-top: -0.75em
+    .beneficiary-input
+      width: 95%
+      margin-top: 1em
+      font-size: 1.2em
+      border: 1px solid black
+      border-radius: 9px
+      outline: none
+
+  .payer-card
+    background-color: #EEF2F7
+    max-width: 33%
+    width: 33%
+    .title
+      margin-left: 7em
+      margin-bottom: 1em
+      margin-top: -0.75em
+    .payer-input
+      font-size: 1.2em
+      border: 1px solid black
+      border-radius: 9px
+      outline: none
+    display: flex
+    flex-direction: column
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+    border-radius: 12px
+    padding: 1em
+    padding-bottom: 3em !important
+    .number
+      display: flex
+      flex-direction: column
+    .personal-items
+      display: flex
+      flex-direction: row
+      align-items: flex-start
+      margin-top: 0.5em
+      flex: 1 1 0
+      .fio-items
+        margin-right: 1em
+        flex: 1 1 0
+        .fio-input
+          width: 100% !important
+          font-size: 1.2em
+          border-radius: 9px
+          border: 1px solid black
+          outline: none
+      .data-items
+        margin-left: 3em
+        display: flex
+        flex-direction: column
+        flex: 1 1 0
+        .item
+          display: flex
+          flex-direction: column
+          .left-item-label
+            margin-right: 0.3em
+          .input-container
+            display: flex
+            flex-direction: row
+            .input-item
+              border-radius: 9px
+              outline: none
+              border: 1px solid black
+              font-size: 1.2em
+              width: 80% !important
+.transaction-confirm
+  z-index: 0
+  input
+    padding-left: 1em
+  display: flex
+  flex-direction: row
+  margin-top: 7em
+  justify-content: center
+
+  .button-container
+    justify-content: center
+    align-items: center
+    width: 30%
+    display: flex
+    flex-direction: row
+    padding: 1em
+    .input-error
+      border: 2px solid red !important
+    .quantaty-input
+      font-size: 1.4em
+      outline: none
+      border: 1px solid black
+      width: 65% !important
+    .button-confirm
+      padding: 2em
+      border: none
+      outline: none
+      border-radius: 12px

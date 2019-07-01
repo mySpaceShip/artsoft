@@ -1,0 +1,57 @@
+<div class="transaction-model">
+  <form [formGroup]="cardForm" (ngSubmit)="onSubmit(cardForm)">
+    <div class="cards">
+      <div class="payer-card">
+        <div class="title">карта плательщика</div>
+        <label class="number" for="payerCard">
+          номер
+          <input  [class.input-error]="cardForm.controls.payerCard.errors?.required" type="text" class="payer-input"
+              [textMask]="{mask: masks.card}"
+              formControlName="payerCard"
+              placeholder="0000 0000 0000 0000 "
+              required>
+        </label>
+        <div class="personal-items">
+          <div class="fio-items">
+            ФИО Держателя
+            <label for="fio">
+              <input [class.input-error]="cardForm.controls.fio.errors?.required" type="text" class="fio-input" placeholder="Ivanov" formControlName="fio">
+            </label>
+          </div>
+          <div class="data-items">
+            <div class="item">
+              <div>активна до</div>
+              <div class="input-container">
+                <label for="forMonth" class="left-item-label">
+                  <input  [class.input-error]="cardForm.controls.forMonth.errors?.required" type="text" placeholder="01" class="input-item" [textMask]="{mask: masks.date}" formControlName="forMonth">
+                </label><label for="forYear">
+                <input  [class.input-error]="cardForm.controls.forYear.errors?.required" type="text" placeholder="12" class="input-item" [textMask]="{mask: masks.date}" formControlName="forYear">
+              </label></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="beneficiary-card">
+        <div class="title">карта получателя</div>
+        <label>
+          <input [class.input-error]="cardForm.controls.beneficiaryCard.errors?.required" type="text" class="beneficiary-input"
+              [textMask]="{mask: masks.card}"
+              formControlName="beneficiaryCard"
+              placeholder="0000 0000 0000 0000"
+              required>
+        </label>
+      </div>
+    </div>
+    <div *ngIf="errorsInput.showErrors" class="transaction-errors">Вы некорректно ввели данные {{errorsInput.errors}}</div>
+    <div class="transaction-confirm">
+      <div class="button-container">
+        <label for="quantaty">
+          <input [class.input-error]="cardForm.controls.quantaty.errors?.required" class="quantaty-input" placeholder="сумма" type="text" formControlName="quantaty">
+        </label>
+        <button class="button-confirm" type="submit">ПЕРЕВЕСТИ</button>
+      </div>
+    </div>
+  </form>
+</div>
